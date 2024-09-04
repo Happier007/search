@@ -1,0 +1,28 @@
+<input [formControl]="searchCtrl" type="search">
+<div>&nbsp;</div>
+
+@if (books$ | async; as books) {
+    @for (book of books; track book) {
+        @switch (book.type) {
+            @case (BookType.NOVEL) {
+                <div class="book" [ngClass]="{'bestseller': book?.bestseller}">
+                    <span>{{ book.title }}</span>
+                </div>
+            }
+            @case (BookType.MEDICINE) {
+                <div class="book">
+                    <span>{{ book.title }}</span>
+                    <span>{{ book | fibonacci }} ссылок</span>
+                </div>
+            }
+        }
+    }
+
+    @if (loading) {
+        <div>Загрузка...</div>
+    }
+}
+
+
+
+

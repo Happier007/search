@@ -1,0 +1,13 @@
+:host {
+    display: grid;
+}
+
+.bestseller {
+    background-color: lightcyan;
+}
+
+.book {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
